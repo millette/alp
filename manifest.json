@@ -1,0 +1,34 @@
+{
+  "connections": [ { "port": 49090 } ],
+  "registrations": [
+    { "plugin": "inert" },
+    { "plugin": "vision" },
+    { "plugin": "hapi-auth-cookie" },
+    { "plugin": "hapi-context-credentials" },
+    { "plugin": "feverish-auth" },
+    { "plugin": "feverish-statics" },
+    { "plugin": "hapijs-status-monitor" },
+    { "plugin": "hapi-info" },
+    { "plugin": "hapi-authorization" },
+    {
+      "plugin": {
+        "register": "good",
+        "options": {
+          "ops": { "interval": 5000 },
+          "reporters": {
+            "myConsoleReporter": [
+              { "module": "good-squeeze", "name": "Squeeze", "args": [{ "log": "*", "response": "*" }] },
+              { "module": "good-console" },
+              "stdout"
+            ],
+            "myFileReporter": [
+              { "module": "good-squeeze", "name": "Squeeze", "args": [{ "ops": "*" }] },
+              { "module": "good-squeeze", "name": "SafeJson" },
+              { "module": "good-file", "args": ["./logs/logfile"] }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
