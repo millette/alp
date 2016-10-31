@@ -3,10 +3,10 @@
   "registrations": [
     { "plugin": "inert" },
     { "plugin": "vision" },
+    { "plugin": "alp-routes" },
+    { "plugin": "feverish-statics" },
     { "plugin": "hapi-auth-cookie" },
     { "plugin": "hapi-context-credentials" },
-    { "plugin": "feverish-auth" },
-    { "plugin": "feverish-statics" },
     { "plugin": "hapijs-status-monitor" },
     { "plugin": "hapi-info" },
     { "plugin": "hapi-authorization" },
